@@ -1,0 +1,458 @@
+/*
+ * Arquivo: style.css
+ * Descrição: Contém todos os estilos CSS para a interface da aplicação,
+ * criando um visual de loja de produtos de beleza.
+ * Gerenciado para ser um único ponto de estilos.
+ */
+
+/* Estilos globais para o corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão para todo o texto */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove preenchimento padrão do navegador */
+    background-color: #f8f8f8; /* Define uma cor de fundo clara para toda a página */
+    color: #333; /* Define a cor padrão do texto */
+}
+
+/* Estilos para a barra superior de navegação (cabeçalho) */
+.top-bar {
+    background-color: #ffffff; /* Fundo branco para a barra superior */
+    border-bottom: 1px solid #eeeeee; /* Borda inferior sutil */
+    padding: 10px 20px; /* Espaçamento interno */
+    display: flex; /* Usa Flexbox para alinhamento dos itens */
+    justify-content: space-between; /* Espaça os itens (logo, navegação, ações do usuário) */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra suave para dar profundidade */
+}
+
+/* Estilo para o logotipo na barra superior */
+.top-bar .logo {
+    font-size: 24px; /* Tamanho da fonte do logo */
+    font-weight: bold; /* Negrito para o logo */
+    color: #e91e63; /* Cor rosa vibrante para o logo */
+    text-decoration: none; /* Remove sublinhado do link */
+}
+
+/* Estilos para a lista de navegação principal (menu) */
+.top-bar nav ul {
+    list-style: none; /* Remove marcadores de lista */
+    margin: 0; /* Remove margens padrão da lista */
+    padding: 0; /* Remove preenchimento padrão da lista */
+    display: flex; /* Usa Flexbox para dispor os itens em linha */
+}
+
+/* Estilos para cada item da lista de navegação */
+.top-bar nav ul li {
+    position: relative; /* Necessário para posicionar o dropdown */
+    margin-left: 25px; /* Espaçamento entre os itens do menu */
+}
+
+/* Estilos para os links dentro da navegação */
+.top-bar nav ul li a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #555; /* Cor cinza escura para os links */
+    font-weight: bold; /* Negrito para os links */
+    padding: 5px 0; /* Preenchimento vertical */
+    transition: color 0.3s ease; /* Transição suave na mudança de cor */
+}
+
+/* Estilos para os links da navegação ao passar o mouse */
+.top-bar nav ul li a:hover {
+    color: #e91e63; /* Altera a cor para rosa ao passar o mouse */
+}
+
+/* Estilos específicos para o conteúdo do dropdown (sub-menu de Relatórios) */
+.dropdown-content {
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute; /* Posiciona o dropdown de forma absoluta em relação ao pai */
+    background-color: #f9f9f9; /* Fundo claro para o dropdown */
+    min-width: 160px; /* Largura mínima do dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra para o dropdown */
+    z-index: 1; /* Garante que o dropdown fique acima de outros elementos */
+    left: 0; /* Alinha o dropdown à esquerda do item pai */
+    top: 100%; /* Posiciona o dropdown abaixo do item pai */
+    padding: 5px 0; /* Preenchimento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Estilos para os links dentro do dropdown */
+.dropdown-content a {
+    color: black; /* Cor do texto dos links do dropdown */
+    padding: 10px 15px; /* Preenchimento interno */
+    text-decoration: none; /* Remove sublinhado */
+    display: block; /* Faz com que cada link ocupe uma linha inteira */
+    text-align: left; /* Alinha o texto à esquerda */
+    font-weight: normal; /* Sem negrito */
+}
+
+/* Estilos para os links do dropdown ao passar o mouse */
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Fundo mais claro ao passar o mouse */
+    color: #e91e63; /* Cor rosa ao passar o mouse */
+}
+
+/* Mostra o conteúdo do dropdown quando o item pai (com classe .dropdown) é hover */
+.top-bar nav ul li.dropdown:hover .dropdown-content {
+    display: block; /* Torna o dropdown visível */
+}
+
+/* Estilos para a seção de ações do usuário (ex: Olá, [Nome]! Sair) */
+.user-actions {
+    display: flex; /* Usa Flexbox para alinhamento */
+    align-items: center; /* Alinha verticalmente ao centro */
+}
+
+/* Estilos para os links dentro das ações do usuário */
+.user-actions a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #555; /* Cor cinza */
+    margin-left: 15px; /* Espaçamento à esquerda */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Estilos para os links das ações do usuário ao passar o mouse */
+.user-actions a:hover {
+    color: #e91e63; /* Cor rosa ao passar o mouse */
+}
+
+/* Estilos para a seção de boas-vindas na página principal */
+.welcome-section {
+    text-align: center; /* Centraliza o texto */
+    padding: 50px 20px; /* Preenchimento interno */
+    background-color: #fff; /* Fundo branco */
+    margin-bottom: 20px; /* Margem inferior */
+    border-bottom: 1px solid #eee; /* Borda inferior */
+}
+
+/* Estilos para o título principal na seção de boas-vindas */
+.welcome-section h1 {
+    color: #880e4f; /* Cor rosa mais escura */
+    font-size: 36px; /* Tamanho da fonte */
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+/* Seção de produtos em destaque na página principal */
+.featured-products {
+    padding: 20px; /* Preenchimento interno */
+    max-width: 1200px; /* Largura máxima da seção */
+    margin: 0 auto; /* Centraliza a seção na página */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Título da seção de produtos */
+.featured-products h2 {
+    color: #880e4f; /* Cor rosa mais escura */
+    font-size: 28px; /* Tamanho da fonte */
+    margin-bottom: 30px; /* Margem inferior */
+}
+
+/* Grade de produtos (layout de display grid) */
+.product-grid {
+    display: grid; /* Usa CSS Grid para o layout */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Colunas responsivas */
+    gap: 20px; /* Espaçamento entre os itens da grade */
+    justify-content: center; /* Centraliza os itens na grade */
+}
+
+/* Estilos para cada item individual do produto na grade */
+.product-item {
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #eeeeee; /* Borda suave */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 15px; /* Preenchimento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: transform 0.2s ease-in-out; /* Transição suave para o hover */
+}
+
+/* Efeito ao passar o mouse sobre o item do produto */
+.product-item:hover {
+    transform: translateY(-5px); /* Move o item ligeiramente para cima */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Aumenta a sombra */
+}
+
+/* Estilos para a imagem do produto */
+.product-item img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Cantos arredondados para a imagem */
+    margin-bottom: 15px; /* Margem inferior */
+    max-height: 200px; /* Limita a altura da imagem */
+    object-fit: contain; /* Ajusta a imagem dentro da área sem cortar */
+}
+
+/* Estilos para o nome do produto */
+.product-item .product-name {
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor do texto */
+    margin-bottom: 8px; /* Margem inferior */
+    min-height: 40px; /* Altura mínima para nomes longos */
+    display: flex; /* Usa Flexbox */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* Estilos para o preço antigo (com desconto) */
+.product-item .old-price {
+    color: #999; /* Cor cinza */
+    text-decoration: line-through; /* Linha sobre o texto */
+    margin-right: 5px; /* Margem à direita */
+}
+
+/* Estilos para o preço atual do produto */
+.product-item .current-price {
+    color: #e91e63; /* Cor rosa vibrante */
+    font-weight: bold; /* Negrito */
+    font-size: 1.1em; /* Tamanho da fonte um pouco maior */
+}
+
+/* Estilos para o rótulo de desconto */
+.product-item .discount {
+    background-color: #ffccbc; /* Fundo pêssego claro */
+    color: #c2185b; /* Cor rosa mais escura */
+    padding: 3px 8px; /* Preenchimento interno */
+    border-radius: 3px; /* Cantos arredondados */
+    font-size: 0.8em; /* Tamanho da fonte menor */
+    margin-left: 5px; /* Margem à esquerda */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilos para contêineres gerais em outras páginas (login, relatórios simples) */
+.container {
+    background-color: #fff; /* Fundo branco */
+    padding: 30px 40px; /* Preenchimento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centraliza o texto */
+    max-width: 500px; /* Largura máxima */
+    width: 100%; /* Ocupa a largura total disponível */
+    margin: 50px auto; /* Centraliza o contêiner na página com margem superior/inferior */
+}
+
+/* Estilos para títulos dentro de contêineres gerais */
+.container h2 {
+    color: #880e4f; /* Cor rosa mais escura */
+}
+
+/* Estilos para parágrafos com links dentro de contêineres gerais */
+.container p a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #e91e63; /* Cor rosa vibrante */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilos para links de contêineres gerais ao passar o mouse */
+.container p a:hover {
+    color: #c2185b; /* Cor rosa mais escura ao passar o mouse */
+}
+
+/* Estilos específicos para o botão de sair (logout) */
+.user-actions .logout-btn {
+    background-color: #f44336; /* Cor vermelha para o botão de sair */
+    color: white; /* Cor do texto branca */
+    padding: 8px 15px; /* Preenchimento interno */
+    border-radius: 20px; /* Cantos bem arredondados */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 14px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+
+/* Estilos para o botão de sair ao passar o mouse */
+.user-actions .logout-btn:hover {
+    background-color: #d32f2f; /* Cor vermelha mais escura ao passar o mouse */
+}
+
+/* Estilos específicos para contêineres de CRUD (cadastro, produtos, vendas) */
+.container-crud, .container-vendas { /* Aplica-se a contêineres de CRUD e vendas */
+    background-color: #fff; /* Fundo branco */
+    padding: 30px 40px; /* Preenchimento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 900px; /* Largura máxima, maior para tabelas */
+    width: 100%; /* Ocupa a largura total disponível */
+    margin: 50px auto; /* Centraliza na página */
+}
+/* Ajuste de largura máxima para o contêiner de vendas */
+.container-vendas {
+    max-width: 1000px;
+}
+
+/* Estilos para títulos H2 e H3 dentro de contêineres CRUD/Vendas */
+.container-crud h2, .container-crud h3,
+.container-vendas h2 {
+    text-align: center; /* Centraliza o texto */
+    color: #880e4f; /* Cor rosa mais escura */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Estilos para formulários dentro de contêineres CRUD/Vendas */
+.container-crud form, .filter-form { /* Aplica-se a formulários de CRUD e formulários de filtro */
+    margin-bottom: 40px; /* Margem inferior */
+    padding-bottom: 20px; /* Preenchimento inferior */
+    border-bottom: 1px solid #eee; /* Borda inferior */
+}
+
+/* Estilos para labels dentro de formulários CRUD/Vendas */
+.container-crud label, .filter-form label {
+    display: block; /* Faz a label ocupar uma linha */
+    margin-bottom: 5px; /* Margem inferior */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilos para campos de texto, número e senha em formulários CRUD/Vendas */
+.container-crud input[type="text"],
+.container-crud input[type="number"],
+.container-crud input[type="password"],
+.filter-form input[type="text"],
+.filter-form input[type="date"] {
+    width: calc(100% - 20px); /* Ocupa quase 100% da largura do pai menos um espaçamento */
+    padding: 10px; /* Preenchimento interno */
+    margin-bottom: 15px; /* Margem inferior */
+    border: 1px solid #ffccbc; /* Borda pêssego clara */
+    border-radius: 5px; /* Cantos arredondados */
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+/* Largura específica para inputs de filtro */
+.filter-form input[type="text"],
+.filter-form input[type="date"] {
+    width: 180px;
+}
+
+/* Estilos para botões de submissão em formulários CRUD/Vendas e botões de filtro */
+.container-crud button[type="submit"], .filter-form button {
+    background-color: #e91e63; /* Cor rosa primária */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Preenchimento interno */
+    border: none; /* Remove borda */
+    border-radius: 20px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de clique */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+
+/* Estilos para botões de submissão/filtro ao passar o mouse */
+.container-crud button[type="submit"]:hover, .filter-form button:hover {
+    background-color: #c2185b; /* Cor rosa mais escura no hover */
+}
+
+/* Estilos para o botão "Limpar Filtros" */
+.btn-clear-filters {
+    background-color: #f06292; /* Cor rosa suave, como o link anterior */
+    color: white;
+    padding: 10px 20px;
+    border: none; /* Garante que não tenha borda padrão de botão */
+    border-radius: 20px; /* Mantém arredondado */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-clear-filters:hover {
+    background-color: #e91e63; /* Cor rosa primária no hover */
+}
+
+/* Estilos para todas as tabelas (lista de produtos, clientes, vendas) */
+.product-list-table, .table, .table-vendas {
+    width: 100%; /* Ocupa 100% da largura do pai */
+    border-collapse: collapse; /* Remove espaçamento entre bordas de células */
+    margin-top: 20px; /* Margem superior */
+}
+
+/* Estilos para cabeçalhos e células de tabelas */
+.product-list-table th, .product-list-table td,
+.table th, .table td,
+.table-vendas th, .table-vendas td {
+    border: 1px solid #f8bbd0; /* Borda rosa clara */
+    padding: 10px; /* Preenchimento interno */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    vertical-align: middle; /* Alinhamento vertical ao meio */
+}
+/* Alinhamento vertical específico para células da tabela de vendas */
+.table-vendas td {
+    vertical-align: top;
+}
+
+/* Estilos para cabeçalhos de tabelas */
+.product-list-table th, .table th, .table-vendas th {
+    background-color: #f48fb1; /* Fundo rosa médio */
+    color: white; /* Texto branco */
+}
+
+/* Estilos para linhas pares das tabelas (alterna cores) */
+.product-list-table tr:nth-child(even), .table tr:nth-child(even), .table-vendas tr:nth-child(even) {
+    background-color: #ffebee; /* Fundo rosa muito claro */
+}
+
+/* Estilos para imagens em tabelas de produtos */
+.product-list-table img {
+    max-width: 80px; /* Largura máxima da imagem */
+    height: auto; /* Mantém a proporção */
+    border-radius: 4px; /* Cantos arredondados */
+    display: block; /* Para permitir margens auto e centralização */
+    margin: 0 auto; /* Centraliza a imagem na célula */
+}
+
+/* Estilos para links de ação (editar/inativar) em tabelas */
+.action-links a {
+    color: #e91e63; /* Cor rosa vibrante */
+    text-decoration: none; /* Remove sublinhado */
+    margin-right: 10px; /* Margem à direita */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilos para links de ação ao passar o mouse */
+.action-links a:hover {
+    color: #c2185b; /* Cor rosa mais escura ao passar o mouse */
+}
+
+/* Estilos para o botão "Voltar ao Menu Principal" */
+.back-button {
+    margin-top: 30px; /* Margem superior */
+    display: inline-block; /* Permite aplicar padding/margin como um bloco */
+    padding: 10px 20px; /* Preenchimento interno */
+    background-color: #f06292; /* Cor rosa suave */
+    color: white; /* Texto branco */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 20px; /* Cantos arredondados */
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+/* Estilos para o botão de voltar ao passar o mouse */
+.back-button:hover {
+    background-color: #e91e63; /* Cor rosa primária no hover */
+    color: white; /* Mantém o texto branco */
+}
+
+/* Layout específico para o formulário de filtro (vendas) */
+.filter-form {
+    display: flex; /* Usa Flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    gap: 15px; /* Espaçamento entre os itens */
+    margin-bottom: 30px; /* Margem inferior */
+    padding: 15px; /* Preenchimento interno */
+    border: 1px solid #ffccbc; /* Borda rosa clara */
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: #fffaf0; /* Fundo pêssego muito claro */
+    justify-content: center; /* Centraliza os itens */
+    align-items: flex-end; /* Alinha os itens à base (útil para inputs com labels em cima) */
+}
+
+/* Estilos para o botão "Gerar Relatório (PDF)" */
+.report-button { /* Removido o .filter-form para que o estilo se aplique a qualquer botão com esta classe */
+    background-color: #8bc34a; /* Verde claro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Arredondado */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 0; /* Garante que não tenha margem extra se não for no filter-form */
+}
+.report-button:hover {
+    background-color: #7cb342; /* Verde um pouco mais escuro no hover */
+}
+
+/* Ajuste específico para o report-button dentro do filter-form para espaçamento */
+.filter-form .report-button {
+    margin-left: 20px; /* Adiciona margem à esquerda quando dentro do formulário de filtro */
+}
