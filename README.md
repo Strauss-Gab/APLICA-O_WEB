@@ -65,5 +65,5 @@ A aplicação contará com:
 
 ## 👤 Autor
 
-Desenvolvido por: **[Seu Nome Aqui]**
+Desenvolvido por: **Gabriel Henrique Strauss**
 
